@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export default function Table({_eset = "", _leirasok = ["", "", ""], _remove})
+export default function Table({_eset = "", _leirasok = ["", "", ""], _remove, _last})
 {
     const [_, setTableData] = useState({eset: _eset, leirasok: _leirasok});
 
@@ -14,7 +14,7 @@ export default function Table({_eset = "", _leirasok = ["", "", ""], _remove})
             <tr className="sub">
                 <td><strong>WHEN</strong></td>
                 <td contentEditable onInput={e => {setTableData(c => ({eset: c.eset, leirasok: [c.leirasok[0], e.target.innerText, c.leirasok[2]]}))}}>{_leirasok[1]}</td>
-                <button className="remove-btn" tabIndex={-1} onClick={_remove}>Remove</button>
+                {_last && <button className="remove-btn" tabIndex={-1} onClick={_remove}>Remove</button>}
             </tr>
             <tr className="sub">
                 <td><strong>THEN</strong></td>

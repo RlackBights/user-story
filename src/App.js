@@ -25,7 +25,7 @@ function App() {
               </tr>
           </thead>
           <tbody>
-            {tableContents.map(({eset, leirasok}, i) => (<Table _eset={eset} _leirasok={leirasok} _remove={() => setTableContents(c => RemoveAtIndex(c, i))}/>))}
+            {tableContents.map(({eset, leirasok}, i) => (<Table _eset={eset} _leirasok={leirasok} _remove={() => setTableContents(c => RemoveAtIndex(c, i))} _last={i == tableContents.length - 1}/>))}
           </tbody>
           <button id='add-btn' onClick={() => {
             setTableContents(c => [...c, (<Table />)])
