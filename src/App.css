@@ -17,7 +17,7 @@ table {
 th, td {
   padding: 2px 10px;
   position: relative;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 td:focus {
   outline: none;
